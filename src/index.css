@@ -12,9 +12,13 @@
     --text-18: 1.125rem;
 }
 
+.overlay-gradient {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.33) 20%, #000 42%);
+}
+
 @layer base {
     html {
-        font-family: var(--font-cormorant);
+        font-family: var(--font-quicksand);
     }
     button {
         @apply cursor-pointer;
@@ -27,7 +31,6 @@
 .grid-auto-cols-120 {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
-
 
 .burger-btn {
     @apply relative h-5 w-8;

@@ -19,10 +19,7 @@ const Header = ({ classNameHeader }) => {
     return (
         <>
             <header
-                className={classes([
-                    'bg-tertiary absolute top-0 right-0 left-0',
-                    classNameHeader,
-                ])}
+                className={classes(['bg-tertiary relative', classNameHeader])}
             >
                 <div className="relative z-30 container mx-auto flex min-h-20 items-center p-5">
                     {!openNav && <LogoLink className="mr-auto" />}

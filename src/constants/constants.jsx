@@ -57,3 +57,18 @@ export const routes = [
 ];
 
 export const LOGO_WIDTH = 190;
+
+export const awardsData = [
+    {
+        id: 1,
+        img: 'awards/award1.png',
+    },
+    {
+        id: 2,
+        img: 'awards/award2.png',
+    },
+    {
+        id: 3,
+        img: 'awards/award3.png',
+    },
+];
