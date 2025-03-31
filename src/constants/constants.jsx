@@ -15,6 +15,25 @@ export const routes = [
                 element: <Home />,
                 name: 'Forside',
             },
+            {
+                path: '/blog',
+                element: <Home />,
+                name: 'Blog',
+            },
+            {
+                path: '/blog/:id',
+                element: <Home />,
+            },
+            {
+                path: '/faq',
+                element: <Home />,
+                name: 'FAQ',
+            },
+            {
+                path: '/kontakt',
+                element: <Home />,
+                name: 'Kontakt',
+            },
         ],
     },
 
@@ -25,16 +44,16 @@ export const routes = [
             {
                 path: '',
                 element: <Backoffice />,
-                inMenu: true,
                 name: 'Backoffice',
             },
 
             {
                 path: 'messages',
                 element: <Messages />,
-                inMenu: true,
                 name: 'Messages',
             },
         ],
     },
 ];
+
+export const LOGO_WIDTH = 190;

@@ -1,5 +1,7 @@
 import { classes } from '@utils/classes';
 
+const spanClasses = 'absolute h-1 w-full rounded bg-secondary duration-300';
+
 const BurgerButton = ({ onClickBurgerMenu, openNav }) => (
     <button
         className={classes([
@@ -10,19 +12,22 @@ const BurgerButton = ({ onClickBurgerMenu, openNav }) => (
     >
         <span
             className={classes([
-                'absolute top-0 left-0 h-1 w-full rounded bg-white duration-300',
+                spanClasses,
+                'top-0 left-0',
                 openNav ? 'top-1/2 -translate-y-1/2 rotate-45' : '',
             ])}
         ></span>
         <span
             className={classes([
-                'absolute top-1/2 left-0 h-1 w-full -translate-y-1/2 rounded bg-white duration-300',
+                spanClasses,
+                'top-1/2 left-1/3 -translate-y-1/2',
                 openNav ? 'w-0 bg-transparent' : '',
             ])}
         ></span>
         <span
             className={classes([
-                'absolute bottom-0 left-0 h-1 w-full rounded bg-white duration-300',
+                spanClasses,
+                'bottom-0 left-0',
                 openNav ? 'top-1/2 -translate-y-1/2 -rotate-45' : '',
             ])}
         ></span>

@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router';
 
-import { routes } from '@constants/routes';
+import { routes } from '@constants/constants';
 import gsap from 'gsap';
 
 import Arrow from '@components/Arrow';

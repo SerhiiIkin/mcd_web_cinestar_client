@@ -1,1 +1,44 @@
-@import "tailwindcss";
+@import url(https://fonts.googleapis.com/css?family=Cormorant:300,regular,500,600,700,300italic,italic,500italic,600italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,regular,500,600,700);
+@import 'tailwindcss';
+
+@theme {
+    --font-cormorant: 'Cormorant', serif;
+    --font-quicksand: 'Quicksand', sans-serif;
+    --color-primary: #ffffff;
+    --color-secondary: #f07232;
+    --color-tertiary: #000000;
+    --color-reject: var(--color-red-500);
+}
+
+@layer base {
+    html {
+        font-family: var(--font-cormorant);
+    }
+    button {
+        @apply cursor-pointer;
+    }
+    textarea {
+        @apply resize-none;
+    }
+}
+
+.grid-auto-cols-120 {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+
+.burger-btn {
+    @apply relative h-5 w-8;
+    &:before,
+    &:after {
+        @apply absolute h-0.5 w-full duration-300 content-[""];
+    }
+
+    &:before {
+        @apply top-0;
+    }
+    &:after {
+        @apply bottom-0;
+    }
+}

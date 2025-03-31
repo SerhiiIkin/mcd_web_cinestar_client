@@ -20,12 +20,12 @@ const Header = ({ classNameHeader }) => {
         <>
             <header
                 className={classes([
-                    'absolute top-0 right-0 left-0',
+                    'bg-tertiary absolute top-0 right-0 left-0',
                     classNameHeader,
                 ])}
             >
                 <div className="relative z-30 container mx-auto flex min-h-20 items-center p-5">
-                    {!openNav && <LogoLink />}
+                    {!openNav && <LogoLink className="mr-auto" />}
                     <NavBar />
                     <BurgerButton
                         onClickBurgerMenu={onClickBurgerMenu}

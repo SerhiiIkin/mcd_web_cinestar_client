@@ -1,6 +1,6 @@
-import { Link } from 'react-router';
+import { NavLink } from 'react-router';
 
-import { routes } from '@constants/routes';
+import { routes } from '@constants/constants';
 
 import { classes } from '@utils/classes';
 
@@ -23,26 +23,32 @@ const NavBar = ({
         <nav
             ref={navBarRef}
             className={classes([
-                isMobile && 'bg-primary fixed inset-0 z-20 hidden text-center',
+                isMobile &&
+                    'bg-tertiary fixed inset-0 z-20 hidden text-xl font-bold',
             ])}
         >
             <div
                 ref={navBarContentRef}
                 className={classes([
                     isMobile
-                        ? 'grid content-center gap-10'
+                        ? 'grid content-start gap-y-5 pt-20 pl-10 text-left uppercase'
                         : 'mr-4 hidden md:flex md:gap-4',
                 ])}
             >
                 {navList.map((item, i) => (
-                    <Link
+                    <NavLink
                         key={i}
-                        className="font-just shadow-title text-5xl leading-7 text-white duration-300 hover:text-black"
+                        className={({ isActive }) =>
+                            classes([
+                                'text-primary xl:hover:text-secondary duration-300',
+                                isActive && 'text-secondary',
+                            ])
+                        }
                         onClick={onClickBurgerMenu}
                         to={item.href}
                     >
                         {item.name}
-                    </Link>
+                    </NavLink>
                 ))}
             </div>
         </nav>
