@@ -10,7 +10,7 @@ const SectionLayout = ({ children, classNameSection, classNameContainer }) => {
         >
             <div
                 className={classes([
-                    'container mx-auto px-6 md:px-8 xl:px-10',
+                    'container mx-auto px-3 md:px-5 xl:px-7',
                     classNameContainer ?? '',
                 ])}
             >

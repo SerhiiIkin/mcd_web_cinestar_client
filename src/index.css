@@ -9,6 +9,7 @@
     --color-secondary: #f07232;
     --color-tertiary: #000000;
     --color-reject: var(--color-red-500);
+    --text-18: 1.125rem;
 }
 
 @layer base {

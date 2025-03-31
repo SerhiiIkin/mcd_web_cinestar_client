@@ -6,7 +6,7 @@ import Header from '@components/Header/Header';
 
 const MainLayout = () => {
     return (
-        <div className="flex min-h-dvh flex-col">
+        <div className="flex min-h-dvh flex-col bg-tertiary text-primary">
             <Header />
             <main className="flex-1">
                 <Outlet />
