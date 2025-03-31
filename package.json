@@ -1,0 +1,44 @@
+{
+  "name": "mcd_web_cinestar_client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "all": "concurrently \"vite\" \"cd ../mcd_web_cinestar_server && npm start\"",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@tailwindcss/vite": "^4.0.17",
+    "@tanstack/react-query": "^5.71.1",
+    "@uidotdev/usehooks": "^2.4.1",
+    "axios": "^1.8.4",
+    "clsx": "^2.1.1",
+    "formik": "^2.4.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-loading-skeleton": "^3.5.0",
+    "react-router": "^7.4.1",
+    "react-toastify": "^11.0.5",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss": "^4.0.17",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "vite": "^6.2.0"
+  }
+}

@@ -1,0 +1,47 @@
+import BurgerButton from './BurgerButton';
+import NavBar from './NavBar';
+
+import LogoLink from '@components/LogoLink';
+
+import useHeader from '@hooks/useHeader';
+
+import { classes } from '@utils/classes';
+
+const Header = ({ classNameHeader }) => {
+    const {
+        openNav,
+        setOpenNav,
+        onClickBurgerMenu,
+        navBarRef,
+        navBarContentRef,
+    } = useHeader();
+
+    return (
+        <>
+            <header
+                className={classes([
+                    'absolute top-0 right-0 left-0',
+                    classNameHeader,
+                ])}
+            >
+                <div className="relative z-30 container mx-auto flex min-h-20 items-center p-5">
+                    {!openNav && <LogoLink />}
+                    <NavBar />
+                    <BurgerButton
+                        onClickBurgerMenu={onClickBurgerMenu}
+                        openNav={openNav}
+                        setOpenNav={setOpenNav}
+                    />
+                </div>
+                <NavBar
+                    isMobile
+                    navBarRef={navBarRef}
+                    onClickBurgerMenu={onClickBurgerMenu}
+                    navBarContentRef={navBarContentRef}
+                />
+            </header>
+        </>
+    );
+};
+
+export default Header;
