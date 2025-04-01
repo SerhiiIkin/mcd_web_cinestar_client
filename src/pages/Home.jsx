@@ -1,4 +1,6 @@
 import CinestarStudio from '@components/Header/CinestarStudio';
+import Portfolio from '@components/Portfolio/Portfolio';
+import Services from '@components/Services/Services';
 import Welcome from '@components/Welcome/Welcome';
 
 const Home = () => {
@@ -6,6 +8,8 @@ const Home = () => {
         <>
             <Welcome />
             <CinestarStudio />
+            <Portfolio />
+            <Services />
         </>
     );
 };

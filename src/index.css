@@ -8,9 +8,17 @@
     --color-primary: #ffffff;
     --color-secondary: #f07232;
     --color-tertiary: #000000;
+    --color-fourth: #212121;
     --color-reject: var(--color-red-500);
     --text-18: 1.125rem;
     --text-40: 2.5rem;
+    --color-sixth: rgba(28, 28, 28, 0.3);
+}
+
+:root {
+    --color-fifth: #f29d38;
+    --padding-bottom-swiper-wrapper: 60px;
+    --width-swiper-nav-btn: 74px;
 }
 
 .overlay-gradient {

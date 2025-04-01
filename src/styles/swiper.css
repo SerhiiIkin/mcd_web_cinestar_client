@@ -1,0 +1,16 @@
+.swiper-pagination-bullet {
+    --width: 25px;
+    --height: 25px;
+    width: var(--width) !important;
+    height: var(--height) !important;
+    background-color: #9999995e !important;
+    opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--color-fifth) !important;
+}
+
+.swiper-wrapper {
+    padding-bottom: var(--padding-bottom-swiper-wrapper);
+}

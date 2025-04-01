@@ -1,3 +1,4 @@
+import LiquiferBg from './LiquiferBg';
 import LogoLink from './LogoLink';
 
 import SectionLayout from '@layouts/SectionLayout';
@@ -12,7 +13,7 @@ const Footer = () => {
                     | POWERED BY ROMETHEM E STUDIO
                 </p>
             </SectionLayout>
-            <div className="absolute inset-0 -z-0 bg-[url(liquifer.png)] bg-cover bg-center bg-no-repeat opacity-10"></div>
+           <LiquiferBg />
         </footer>
     );
 };
