@@ -10,6 +10,7 @@
     --color-tertiary: #000000;
     --color-reject: var(--color-red-500);
     --text-18: 1.125rem;
+    --text-40: 2.5rem;
 }
 
 .overlay-gradient {

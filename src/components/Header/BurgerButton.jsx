@@ -5,7 +5,7 @@ const spanClasses = 'absolute h-1 w-full rounded bg-secondary duration-300';
 const BurgerButton = ({ onClickBurgerMenu, openNav }) => (
     <button
         className={classes([
-            'relative ml-3 h-7 w-9 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent md:hidden',
+            'relative z-40 ml-3 h-7 w-9 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent md:hidden',
             openNav && 'ml-auto',
         ])}
         onClick={onClickBurgerMenu}

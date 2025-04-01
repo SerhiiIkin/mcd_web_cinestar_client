@@ -21,7 +21,7 @@ const Header = ({ classNameHeader }) => {
             <header
                 className={classes(['bg-tertiary relative', classNameHeader])}
             >
-                <div className="relative z-30 container mx-auto flex min-h-20 items-center p-5">
+                <div className="relative container mx-auto flex min-h-20 items-center p-5">
                     {!openNav && <LogoLink className="mr-auto" />}
                     <NavBar />
                     <BurgerButton

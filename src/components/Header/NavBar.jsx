@@ -24,7 +24,7 @@ const NavBar = ({
             ref={navBarRef}
             className={classes([
                 isMobile &&
-                    'bg-tertiary fixed inset-0 z-20 hidden text-xl font-bold',
+                    'bg-tertiary fixed inset-0 z-30 hidden text-xl font-bold',
             ])}
         >
             <div
