@@ -7,7 +7,7 @@ const WelcomeHeader = () => {
                 <Title type="h4">CINESTAR STUDIO </Title>
                 <Title className="pb-7">
                     FILM & TV
-                    <span className="text-secondary"> PRODUKTION</span>
+                    <span className="text-secondary break-words"> PRODUKTION</span>
                 </Title>
                 <p className="text-center text-xl">
                     Vi skaber levende fortællinger, der fanger dit publikum. Fra

@@ -11,6 +11,17 @@
     background-color: var(--color-fifth) !important;
 }
 
-.swiper-wrapper {
+.portfolio-swiper .swiper-wrapper {
     padding-bottom: var(--padding-bottom-swiper-wrapper);
+}
+
+.statements-swiper .swiper-slide {
+    display: flex !important;
+    height: auto !important;
+    transform: scale(0.6) !important;
+    transition: scale 0.9s ease-in-out;
+}
+
+.statements-swiper .swiper-slide-active {
+    transform: scale(0.85) !important;
 }

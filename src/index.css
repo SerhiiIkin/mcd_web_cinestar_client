@@ -13,6 +13,10 @@
     --text-18: 1.125rem;
     --text-40: 2.5rem;
     --color-sixth: rgba(28, 28, 28, 0.3);
+    --color-seventh: #dcb036;
+    --color-eighth: rgba(153, 153, 153, 0.2);
+    --color-ninth: rgba(255, 255, 255, 0.8);
+    --color-tenth: rgba(153, 153, 153, 0.39);
 }
 
 :root {

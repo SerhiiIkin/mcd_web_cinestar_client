@@ -87,7 +87,7 @@ const Video = ({ classNameContainer, className, ...props }) => {
 
 const CinestarStudio = () => {
     return (
-        <SectionLayout classNameSection="py-25" classNameContainer="grid gap-8">
+        <SectionLayout  classNameContainer="grid gap-8">
             <article>
                 <Title type="h5" className="text-secondary text-left">
                     CINESTAR STUDIO

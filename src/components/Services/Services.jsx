@@ -1,15 +1,16 @@
+import { dataServices } from '@constants/constants';
+
 import Service from './Service';
 
 import SectionLayout from '@layouts/SectionLayout';
 
-import LiquiferBg from '@components/LiquiferBg';
+import Bg from '@components/Bg';
 import Title from '@components/Title';
-import { dataServices } from '@constants/constants';
 
 const Services = () => {
     return (
         <SectionLayout
-            classNameSection="py-25 relative"
+            classNameSection="relative"
             classNameContainer="grid gap-8 px-5"
         >
             <article className="grid gap-2">
@@ -21,7 +22,7 @@ const Services = () => {
             {dataServices().map((service) => (
                 <Service key={service.id} service={service} />
             ))}
-            <LiquiferBg />
+            <Bg img="liquifer.png" />
         </SectionLayout>
     );
 };

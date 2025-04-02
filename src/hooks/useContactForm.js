@@ -11,21 +11,21 @@ const useContactForm = (changeModalState) => {
     const formData = [
         {
             _id: 1,
-            label: 'Navn',
-            type: 'text',
             name: 'name',
+            type: 'text',
+            placeholder: 'Navn',
         },
         {
             _id: 2,
-            label: 'Emne',
-            type: 'text',
             name: 'subject',
+            type: 'text',
+            placeholder: 'Emne',
         },
         {
             _id: 3,
-            label: 'Beskrivelse',
-            type: 'text',
             name: 'description',
+            type: 'text',
+            placeholder: 'Besked',
             rows: 5,
             fieldsType: 'textarea',
         },
@@ -46,7 +46,6 @@ const useContactForm = (changeModalState) => {
     const onSubmit = (values, { resetForm }) => {
         const formData = { ...values };
         setName(values.name);
-        console.log('🚀 ~ onSubmit ~ formData:', formData);
         mutationSendMessage.mutate(formData);
         resetForm();
     };

@@ -10,10 +10,13 @@ const DataHandleLayout = ({
     containerClassNameSkeleton,
     emptyText = 'No data available',
 }) => {
+    const classNamesAll = 'py-5 md:py-7 xl:py-9';
+
     if (data.error) {
         return (
             <div
                 className={classes([
+                    classNamesAll,
                     'text-center text-red-500',
                     className ?? '',
                 ])}
@@ -24,20 +27,28 @@ const DataHandleLayout = ({
     }
     if (data?.data?.length === 0 && !data.isLoading && !data.error) {
         return (
-            <div className={classes(['', className ?? ''])}>{emptyText}</div>
+            <div className={classes([classNamesAll, '', className ?? ''])}>
+                {emptyText}
+            </div>
         );
     }
 
     if (data.isLoading) {
         return (
-            <Skeleton
-                containerClassName={containerClassNameSkeleton}
-                count={SkeletonCount}
-            />
+            <div className={classes([classNamesAll, '', className ?? ''])}>
+                <Skeleton
+                    containerClassName={containerClassNameSkeleton}
+                    count={SkeletonCount}
+                />
+            </div>
         );
     }
 
-    return <>{children}</>;
+    return (
+        <div className={classes([classNamesAll, '', className ?? ''])}>
+            {children}
+        </div>
+    );
 };
 
 export default DataHandleLayout;

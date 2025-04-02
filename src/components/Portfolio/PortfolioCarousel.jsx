@@ -14,12 +14,13 @@ const PortfolioCarousel = () => {
                 slidesPerView={1}
                 speed={200}
                 grabCursor
+                loop={portfolioImages.length > 1}
                 navigation={{
                     prevEl: '.btn-prev',
                     nextEl: '.btn-next',
                 }}
-                loop={portfolioImages.length > 1}
                 pagination={{ clickable: true }}
+                className='portfolio-swiper'
             >
                 {portfolioImages.map((image) => (
                     <SwiperSlide key={image.id} className="w-full">

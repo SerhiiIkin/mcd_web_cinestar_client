@@ -4,7 +4,7 @@ const Loader = ({ className }) => {
     return (
         <span
             className={classes([
-                'aspect-square w-4 animate-spin rounded-full border-b border-b-white',
+                'inline-block aspect-square w-4 animate-spin rounded-full border-b border-b-white',
                 className,
             ])}
         ></span>

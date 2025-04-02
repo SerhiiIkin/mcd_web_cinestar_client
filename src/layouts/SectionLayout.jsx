@@ -4,13 +4,13 @@ const SectionLayout = ({ children, classNameSection, classNameContainer }) => {
     return (
         <section
             className={classes([
-                'py-7 md:py-9 xl:py-12',
+                'py-25 md:py-27 xl:py-29',
                 classNameSection ?? '',
             ])}
         >
             <div
                 className={classes([
-                    'container mx-auto px-3 md:px-5 xl:px-7',
+                    'container mx-auto px-5 md:px-7 xl:px-9',
                     classNameContainer ?? '',
                 ])}
             >

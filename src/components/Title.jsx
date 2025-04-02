@@ -29,6 +29,12 @@ const Title = ({ type, className, children }) => {
                     {children}
                 </h5>
             );
+        case 'h6':
+            return (
+                <h6 className={classes([titleClasses, 'text-sm', className])}>
+                    {children}
+                </h6>
+            );
 
         default:
             return (

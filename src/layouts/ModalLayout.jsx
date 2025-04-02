@@ -10,21 +10,15 @@ const ModalLayout = ({
             className="fixed inset-0 z-40 hidden place-items-center"
         >
             {children}
-            <button
-                onClick={changeModalState}
-                className="absolute top-2 right-2"
-            >
-                <CloseSvg />
-            </button>
             <div
                 title="close modal"
-                className="absolute inset-0 -z-20 cursor-pointer bg-[url(modalBackground.png)] bg-cover bg-center"
+                className="absolute inset-0 -z-20 cursor-pointer"
             ></div>
             <div
                 ref={backdropRef}
                 title="close modal"
                 onClick={changeModalState}
-                className="absolute inset-0 -z-10 cursor-pointer bg-white"
+                className="absolute inset-0 -z-10 cursor-pointer bg-tertiary"
             ></div>
         </div>
     );

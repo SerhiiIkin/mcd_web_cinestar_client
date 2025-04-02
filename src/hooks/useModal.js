@@ -16,7 +16,7 @@ const useModal = () => {
         setModalState((prev) => !prev);
 
         gsap.to(backdropRef.current, {
-            opacity: modalState ? 0 : 0.7,
+            opacity: modalState ? 0 : 1,
             duration,
         });
 
