@@ -1,6 +1,8 @@
+import Button from './Button';
 import Title from './Title';
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, isHomePage }) => {
+    if(!blog) return;
     const { image, title, created, teaser } = blog;
     return (
         <article className="border-tenth border">
@@ -13,7 +15,8 @@ const Blog = ({ blog }) => {
                     {title}
                 </Title>
                 <p className="pb-9 text-xl">{teaser}</p>
-                <p className="pb-2 text-right text-xs">Oprettet d. {created}</p>
+                <Button className="mb-5"> Læs mere </Button>
+                {isHomePage &&<p className="pb-2 text-right text-xs">Oprettet d. {created}</p>}
             </div>
         </article>
     );

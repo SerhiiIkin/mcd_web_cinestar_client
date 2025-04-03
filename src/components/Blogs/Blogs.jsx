@@ -17,7 +17,7 @@ const Blogs = () => {
     });
 
     const lastBlog = useMemo(() => {
-        return data.data
+        return data.data && data.data
             .sort((a, b) => new Date(b.created) - new Date(a.created))
             .map((blog) => ({
                 ...blog,
@@ -31,7 +31,7 @@ const Blogs = () => {
             classNameContainer="grid gap-8"
         >
             <BlogsHeader />
-            <Blog blog={lastBlog} />
+            <Blog isHomePage blog={lastBlog} />
         </SectionLayout>
     );
 };
