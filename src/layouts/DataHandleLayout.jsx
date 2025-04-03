@@ -45,9 +45,9 @@ const DataHandleLayout = ({
     }
 
     return (
-        <div className={classes([classNamesAll, '', className ?? ''])}>
+        < >
             {children}
-        </div>
+        </>
     );
 };
 

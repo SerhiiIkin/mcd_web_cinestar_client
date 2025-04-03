@@ -1,9 +1,13 @@
 import BackofficeLayout from '@layouts/BackofficeLayout';
 import MainLayout from '@layouts/MainLayout';
 
-import Home from '@pages/Home';
-import Backoffice from '@pages/backoffice/Backoffice';
-import Messages from '@pages/backoffice/Messages';
+import BlogsPage from '@pages/BlogsPage';
+import ContactPage from '@pages/ContactPage';
+import FaqPage from '@pages/FaqPage';
+import HomePage from '@pages/HomePage';
+import SingleBlogPage from '@pages/SingleBlogPage';
+import BackofficePage from '@pages/backoffice/BackofficePage';
+import MessagesPage from '@pages/backoffice/MessagesPage';
 
 export const routes = [
     {
@@ -12,26 +16,26 @@ export const routes = [
         children: [
             {
                 path: '/',
-                element: <Home />,
+                element: <HomePage />,
                 name: 'Forside',
             },
             {
-                path: '/blog',
-                element: <Home />,
+                path: '/blogs',
+                element: <BlogsPage />,
                 name: 'Blog',
             },
             {
                 path: '/blog/:id',
-                element: <Home />,
+                element: <SingleBlogPage />,
             },
             {
                 path: '/faq',
-                element: <Home />,
+                element: <FaqPage />,
                 name: 'FAQ',
             },
             {
                 path: '/kontakt',
-                element: <Home />,
+                element: <ContactPage />,
                 name: 'Kontakt',
             },
         ],
@@ -43,13 +47,13 @@ export const routes = [
         children: [
             {
                 path: '',
-                element: <Backoffice />,
+                element: <BackofficePage />,
                 name: 'Backoffice',
             },
 
             {
                 path: 'messages',
-                element: <Messages />,
+                element: <MessagesPage />,
                 name: 'Messages',
             },
         ],
@@ -89,7 +93,7 @@ export const portfolioImages = [
     },
 ];
 
-export const dataServices =  () => {
+export const dataServices = () => {
     const CreativeSvg = () => (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +206,6 @@ export const dataServices =  () => {
     ];
 };
 
-
 export const contactInfoData = () => {
     const PhoneSvg = () => (
         <svg
@@ -270,3 +273,31 @@ export const contactInfoData = () => {
         },
     ];
 };
+
+export const linksSocialContact = [
+    {
+        id: 1,
+        name: 'facebook',
+        href: 'www.facebook.com',
+    },
+    {
+        id: 2,
+        name: 'twitter',
+        href: 'www.twitter.com',
+    },
+    {
+        id: 3,
+        name: 'instagram',
+        href: 'www.instagram.com',
+    },
+    {
+        id: 4,
+        name: 'linkedin',
+        href: 'www.linkedin.com',
+    },
+    {
+        id: 5,
+        name: 'youtube',
+        href: 'www.youtube.com',
+    },
+];

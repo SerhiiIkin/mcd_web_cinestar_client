@@ -2,7 +2,7 @@ import { ErrorMessage, Field as TextField } from 'formik';
 
 import { classes } from '@utils/classes';
 
-const Field = ({ field, classNameLabel }) => (
+const Field = ({ field, classNameLabel, classNameInput, classNameError }) => (
     <label
         className={classes([
             'relative grid gap-2 pb-6 text-center',
@@ -11,7 +11,10 @@ const Field = ({ field, classNameLabel }) => (
     >
         <TextField
             as={field.fieldsType}
-            className="w-full border-b border-l p-3 border-ninth"
+            className={classes([
+                'border-ninth w-full border-b border-l p-3',
+                classNameInput,
+            ])}
             label={field.placeholder}
             placeholder={field.placeholder}
             name={field.name}
@@ -21,7 +24,10 @@ const Field = ({ field, classNameLabel }) => (
         <ErrorMessage
             component="div"
             name={field.name}
-            className="absolute bottom-0 left-2 text-xs text-red-500"
+            className={classes([
+                'absolute bottom-0 left-2 text-xs text-red-400',
+                classNameError,
+            ])}
         />
     </label>
 );

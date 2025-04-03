@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 
-import BlogsHeader from './BlogsHeader';
+import LastBlogHeader from './LastBlogHeader';
 
 import SectionLayout from '@layouts/SectionLayout';
 
@@ -10,19 +10,19 @@ import Blog from '@components/Blog';
 import { axiosGetData } from '@utils/axios';
 import { createdDate } from '@utils/createdDate';
 
-const Blogs = () => {
+const LastBlog = () => {
     const data = useQuery({
         queryKey: ['blogs'],
         queryFn: () => axiosGetData({ title: 'blogs', role: 'user' }),
     });
 
     const lastBlog = useMemo(() => {
-        return data.data && data.data
-            .sort((a, b) => new Date(b.created) - new Date(a.created))
-            .map((blog) => ({
-                ...blog,
-                created: createdDate(blog.created),
-            }))[0];
+        return (
+            data.data &&
+            data.data.sort(
+                (a, b) => new Date(b.created) - new Date(a.created),
+            )[0]
+        );
     }, [data.data]);
 
     return (
@@ -30,10 +30,10 @@ const Blogs = () => {
             classNameSection="bg-fourth"
             classNameContainer="grid gap-8"
         >
-            <BlogsHeader />
+            <LastBlogHeader />
             <Blog isHomePage blog={lastBlog} />
         </SectionLayout>
     );
 };
 
-export default Blogs;
+export default LastBlog;

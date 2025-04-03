@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="relative">
             <SectionLayout
                 classNameSection="py-7 md:py-9 xl:py-11"
-                classNameContainer="grid place-items-center relative z-10"
+                classNameContainer="grid place-items-center"
             >
                 <LogoLink className="pb-9" />
                 <p className="text-18 text-center">
@@ -16,7 +16,7 @@ const Footer = () => {
                     | POWERED BY ROMETHEM E STUDIO
                 </p>
             </SectionLayout>
-            <Bg img="liquifer.png" />
+            <Bg img="/liquifer.png" />
         </footer>
     );
 };

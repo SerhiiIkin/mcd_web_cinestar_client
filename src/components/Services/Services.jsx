@@ -22,7 +22,7 @@ const Services = () => {
             {dataServices().map((service) => (
                 <Service key={service.id} service={service} />
             ))}
-            <Bg img="liquifer.png" />
+            <Bg img="/liquifer.png" />
         </SectionLayout>
     );
 };

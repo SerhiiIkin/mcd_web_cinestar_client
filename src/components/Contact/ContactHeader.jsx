@@ -1,6 +1,12 @@
+import { useContext } from 'react';
+
+import ContactContextProvider from '@context/ContactContext';
+
 import Title from '@components/Title';
 
 const ContactHeader = () => {
+    const { title, description } = useContext(ContactContextProvider);
+
     return (
         <article>
             <Title
@@ -10,13 +16,9 @@ const ContactHeader = () => {
                 KONTAKT
             </Title>
             <Title type="h3" className="pb-5 text-left">
-                BOOK EN SAMTALE MED OS
+                {title}
             </Title>
-            <p className='text-xl pb-5'>
-                Har du spørgsmål eller ønsker du at vide mere om, hvordan vi kan
-                hjælpe med dit næste projekt? Udfyld formularen, og vi kontakter
-                dig hurtigst muligt. Vi ser frem til at samarbejde med dig!
-            </p>
+            <p className="pb-5 text-xl">{description}</p>
         </article>
     );
 };

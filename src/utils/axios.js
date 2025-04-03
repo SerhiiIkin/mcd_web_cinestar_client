@@ -33,6 +33,7 @@ export const axiosPostData = async ({ title, formData, role }) => {
     } catch (error) {
         console.log('Error sending data:', error);
         role === 'admin' && toast.error('Error saving data');
+        throw new Error(error.response.data.message);
     }
 };
 

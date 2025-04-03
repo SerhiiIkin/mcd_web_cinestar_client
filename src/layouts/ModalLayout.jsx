@@ -7,7 +7,7 @@ const ModalLayout = ({
     return (
         <div
             ref={contentModalRef}
-            className="fixed inset-0 z-40 hidden place-items-center"
+            className="fixed inset-0 z-50 hidden place-items-center"
         >
             {children}
             <div
@@ -18,7 +18,7 @@ const ModalLayout = ({
                 ref={backdropRef}
                 title="close modal"
                 onClick={changeModalState}
-                className="absolute inset-0 -z-10 cursor-pointer bg-tertiary"
+                className="bg-tertiary absolute inset-0 -z-10 cursor-pointer"
             ></div>
         </div>
     );

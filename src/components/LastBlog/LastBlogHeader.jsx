@@ -1,6 +1,6 @@
 import Title from "@components/Title";
 
-const BlogsHeader = () => {
+const LastBlogHeader = () => {
     return (
         <article className="grid gap-2">
         <Title
@@ -21,4 +21,4 @@ const BlogsHeader = () => {
     );
 };
 
-export default BlogsHeader;
+export default LastBlogHeader;
