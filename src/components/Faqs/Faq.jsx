@@ -5,8 +5,8 @@ import { classes } from '@utils/classes';
 const Faq = ({ faq }) => {
     return (
         <details className="group">
-            <summary className="group-open:bg-secondary bg-primary text-tertiary relative list-none px-4 py-5 uppercase duration-700">
-                <span className="inline-block max-w-3/4 text-xl font-bold group-open:text-primary">
+            <summary className="group-open:bg-secondary bg-primary text-tertiary relative cursor-pointer list-none px-4 py-5 uppercase duration-700">
+                <span className="group-open:text-primary inline-block max-w-3/4 text-xl font-bold">
                     {faq.question}
                 </span>
                 <Arrow

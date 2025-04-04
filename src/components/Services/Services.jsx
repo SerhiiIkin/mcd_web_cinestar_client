@@ -13,7 +13,7 @@ const Services = () => {
             classNameSection="relative"
             classNameContainer="grid gap-8 px-5"
         >
-            <article className="grid gap-2">
+            <article className="grid gap-2 pb-6">
                 <Title type="h5" className="text-secondary font-quicksand">
                     SERVICE
                 </Title>

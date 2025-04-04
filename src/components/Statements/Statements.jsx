@@ -44,19 +44,39 @@ const Statements = () => {
             >
                 <Swiper
                     modules={[A11y]}
-                    spaceBetween={-90}
                     slidesPerView="auto"
+                    spaceBetween={-70}
                     centeredSlides={true}
                     speed={200}
-                    loop={data.length > 1}
-                    className='statements-swiper'
+                    loop
+                    className="statements-swiper"
+                    breakpoints={{
+                        380: {
+                            spaceBetween: -80,
+                        },
+                        420: {
+                            spaceBetween: -95,
+                        },
+                        480: {
+                            spaceBetween: -110,
+                        },
+                        550: {
+                            spaceBetween: -130,
+                        },
+                        768: {
+                            spaceBetween: -170,
+                        },
+                        1024: {
+                            spaceBetween: -220,
+                        },
+                        1280: {
+                            spaceBetween: -270,
+                        },
+                    }}
                 >
                     {data.data &&
                         data.data.map((statement) => (
-                            <SwiperSlide
-                                key={statement._id}
-                                className=""
-                            >
+                            <SwiperSlide key={statement._id}>
                                 <Statement statement={statement} />
                             </SwiperSlide>
                         ))}

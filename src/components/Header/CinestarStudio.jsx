@@ -60,7 +60,7 @@ const Video = ({ classNameContainer, className, ...props }) => {
         <div className="relative" ref={videoContainerRef}>
             <div
                 ref={previewContainerRef}
-                className="absolute top-0 left-0 z-10"
+                className="absolute inset-0 z-10"
             >
                 <PlayCircle
                     onClick={videoHandler}

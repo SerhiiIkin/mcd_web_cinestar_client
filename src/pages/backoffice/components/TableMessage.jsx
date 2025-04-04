@@ -1,12 +1,8 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useMemo, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
-import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 
-import Button from '@components/Button';
-
-import { axiosRemoveData } from '@utils/axios';
+import { axiosUpdateData } from '@utils/axios';
 
 const Td = ({ title, children }) => (
     <td className="grid grid-cols-7 gap-1 p-1 text-left xl:table-cell xl:border-0 xl:p-2">
@@ -24,74 +20,51 @@ const Th = ({ children }) => (
 );
 
 const Tr = ({ d, captions }) => {
-    const navigation = useNavigate();
+    const [checked, setChecked] = useState(d.status);
+
     const queryClient = useQueryClient();
 
-    const isMobile = useMediaQuery({
-        query: '(min-width: 320px)',
-    });
-    const isTablet = useMediaQuery({
-        query: '(min-width: 1024px)',
-    });
-    const isComputer = useMediaQuery({
-        query: '(min-width: 1280px)',
-    });
-
-    const clipText = (str) => {
-        if (isComputer && str.length > 550) return str.slice(0, 550) + '...';
-        if (isTablet && str.length > 350) return str.slice(0, 350) + '...';
-        else if (isMobile && str.length > 100) {
-            return str.slice(0, 100) + '...';
-        } else return str;
+    const changeStatusInput = (event) => {
+        const checked = event.target.checked;
+        setChecked(checked);
+        const formData = { ...d, status: checked, id: d._id };
+        mutateUpdateStatus.mutate(formData);
     };
 
-    const removeBlog = (id) => {
-        mutateRemoveBlog.mutate({ title: 'blog', id });
-    };
-
-    const mutateRemoveBlog = useMutation({
-        mutationFn: ({ title, id }) =>
-            axiosRemoveData({ title, id, role: 'user' }),
+    const mutateUpdateStatus = useMutation({
+        mutationFn: (formData) =>
+            axiosUpdateData({ title: 'message', role: 'admin', formData }),
         onSuccess: (data) => {
             toast.success(data.message);
-            queryClient.invalidateQueries(['blogs']);
-        },
-        onError: (error) => {
-            toast.error(error.message);
+            queryClient.invalidateQueries(['messages']);
         },
     });
 
     return (
         <tr className="grid gap-4 border-b border-gray-700 py-2 last:border-0 xl:table-row">
-            {captions
-                .filter(
-                    (caption) => caption !== 'Actions' && caption !== 'Image',
-                )
-                .map((caption, i) => (
+            {captions.map((caption, i) => {
+                if (caption === 'Status') {
+                    return (
+                        <Td key={i} title={caption}>
+                            <label htmlFor={`status${i}`}>
+                                <input
+                                    checked={checked}
+                                    onChange={changeStatusInput}
+                                    type="checkbox"
+                                    id={`status${i}`}
+                                    className=""
+                                />
+                            </label>
+                            {d.status ? 'Read ' : 'Not Read'}
+                        </Td>
+                    );
+                }
+                return (
                     <Td key={i} title={caption}>
-                        {clipText(d[caption.toLocaleLowerCase()])}
+                        {d[caption.toLocaleLowerCase()]}
                     </Td>
-                ))}
-
-            <Td title="Image">
-                <img src={d.image} className="max-w-24" alt="" />
-            </Td>
-            <Td title="Actions">
-                <Button
-                    onClick={() => navigation(`/backoffice/blog/${d._id}`)}
-                    type="button"
-                    className="px-4 py-2"
-                >
-                    Edit
-                </Button>
-                <Button
-                    onClick={() => removeBlog(d._id)}
-                    type="button"
-                    className="px-4 py-2"
-                >
-                    Delete
-                </Button>
-            </Td>
+                );
+            })}
         </tr>
     );
 };

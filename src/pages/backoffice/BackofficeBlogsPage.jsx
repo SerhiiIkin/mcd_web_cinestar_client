@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
+import BlogForm from './components/BlogForm';
 import Table from './components/Table';
 
 import SectionLayout from '@layouts/SectionLayout';
@@ -13,12 +14,9 @@ const BackofficeBlogsPage = () => {
     });
 
     return (
-        <SectionLayout>
-            <div className="px-8">
-                <div className="text-primary rounded-lg bg-gray-800 p-4">
-                    <Table data={data.data} />
-                </div>
-            </div>
+        <SectionLayout classNameContainer="grid gap-8">
+            <Table data={data.data} actions title={'Blogs'} />
+            <BlogForm />
         </SectionLayout>
     );
 };

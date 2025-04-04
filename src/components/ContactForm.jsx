@@ -1,14 +1,12 @@
-import { Form, Formik } from 'formik';
-
 import ModalLayout from '@layouts/ModalLayout';
 
 import Button from '@components/Button';
-import Field from '@components/Field';
-import Loader from '@components/Loader';
+
 import Title from '@components/Title';
 
 import useContactForm from '@hooks/useContactForm';
 import useModal from '@hooks/useModal';
+import FormFormik from './FormFormik';
 
 const ContactForm = () => {
     const modalProps = useModal();
@@ -41,33 +39,14 @@ const ContactForm = () => {
                     </Button>
                 </div>
             </ModalLayout>
-
-            <Formik
-                enableReinitialize
+            <FormFormik
+                buttonName="Send besked"
+                mutation={mutationSendMessage}
                 validationSchema={validationSchema}
                 initialValues={initialValues}
                 onSubmit={onSubmit}
-            >
-                {({ isValid }) => (
-                    <Form className="relative z-10 grid gap-9 py-3">
-                        {formData.map((field) => (
-                            <Field key={field._id} field={field} />
-                        ))}
-
-                        <Button
-                            aria-label="send besked"
-                            type="submit"
-                            className="relative justify-self-start"
-                            disabled={mutationSendMessage.isPending || !isValid}
-                        >
-                            Send besked
-                            {mutationSendMessage.isPending && (
-                                <Loader className="absolute top-1/2 right-4 -translate-y-1/2" />
-                            )}
-                        </Button>
-                    </Form>
-                )}
-            </Formik>
+                formData={formData}
+            />
         </>
     );
 };

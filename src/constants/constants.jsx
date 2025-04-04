@@ -9,6 +9,7 @@ import LoginPage from '@pages/LoginPage';
 import SingleBlogPage from '@pages/SingleBlogPage';
 import BackofficeBlogsPage from '@pages/backoffice/BackofficeBlogsPage';
 import BackofficePage from '@pages/backoffice/BackofficePage';
+import EditBlogPage from '@pages/backoffice/EditBlogPage';
 import MessagesPage from '@pages/backoffice/MessagesPage';
 
 export const routes = [
@@ -65,6 +66,10 @@ export const routes = [
                 path: 'blogs',
                 element: <BackofficeBlogsPage />,
                 name: 'Blogs',
+            },
+            {
+                path: 'blog/:id',
+                element: <EditBlogPage />,
             },
         ],
     },
