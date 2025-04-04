@@ -5,6 +5,11 @@
     height: var(--height) !important;
     background-color: #9999995e !important;
     opacity: 1 !important;
+    @media (min-width: 1280px) {
+        &:hover {
+            background-color: var(--color-secondary) !important;
+        }
+    }
 }
 
 .swiper-pagination-bullet-active {

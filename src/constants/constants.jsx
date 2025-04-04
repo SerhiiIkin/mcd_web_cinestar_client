@@ -6,6 +6,7 @@ import ContactPage from '@pages/ContactPage';
 import FaqPage from '@pages/FaqPage';
 import HomePage from '@pages/HomePage';
 import LoginPage from '@pages/LoginPage';
+import NotFound from '@pages/NotFound';
 import SingleBlogPage from '@pages/SingleBlogPage';
 import BackofficeBlogsPage from '@pages/backoffice/BackofficeBlogsPage';
 import BackofficePage from '@pages/backoffice/BackofficePage';
@@ -70,6 +71,16 @@ export const routes = [
             {
                 path: 'blog/:id',
                 element: <EditBlogPage />,
+            },
+        ],
+    },
+    {
+        path: '*',
+        element: <MainLayout />,
+        children: [
+            {
+                path: '*',
+                element: <NotFound />,
             },
         ],
     },

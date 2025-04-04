@@ -19,7 +19,7 @@ const Footer = () => {
                 </p>
                 <Link
                     to="/login"
-                    className="relative z-20 justify-self-end text-xs"
+                    className="xl:hover:text-secondary relative z-20 justify-self-end text-xs"
                 >
                     Admin login
                 </Link>
