@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 import Bg from './Bg';
 import LogoLink from './LogoLink';
 
@@ -15,6 +17,12 @@ const Footer = () => {
                     COPYRIGHT <span className="text-2xl">202 ©</span> CINESTAR
                     | POWERED BY ROMETHEM E STUDIO
                 </p>
+                <Link
+                    to="/login"
+                    className="relative z-20 justify-self-end text-xs"
+                >
+                    Admin login
+                </Link>
             </SectionLayout>
             <Bg img="/liquifer.png" />
         </footer>

@@ -22,6 +22,8 @@
     --text-40: 2.5rem;
     --text-32: 2rem;
     --text-38: 2.375rem;
+
+    --breakpoint-2xl: 1400px;
 }
 
 :root {

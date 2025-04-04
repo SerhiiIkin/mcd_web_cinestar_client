@@ -11,7 +11,7 @@ const BackofficeSideBar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const sideBarLinks = routes[1].children
-        .filter((route) => route.inMenu)
+        .filter((route) => route.name)
         .map((route) => {
             return {
                 name: route.name,
@@ -47,7 +47,7 @@ const BackofficeSideBar = () => {
                     type="button"
                     className="bg-secondary absolute top-1/2 right-0 translate-x-full -translate-y-1/2 rounded-tr-2xl rounded-br-2xl p-2"
                 >
-                    <Arrow ref={arrowSvg} className="-rotate-90" />
+                    <Arrow ref={arrowSvg} className="-rotate-90 fill-white" />
                 </button>
                 <ul className="bg-secondary grid min-h-screen content-center gap-4 rounded-t-lg rounded-b-lg p-2">
                     {sideBarLinks.map((link, index) => (

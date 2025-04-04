@@ -5,7 +5,9 @@ import BlogsPage from '@pages/BlogsPage';
 import ContactPage from '@pages/ContactPage';
 import FaqPage from '@pages/FaqPage';
 import HomePage from '@pages/HomePage';
+import LoginPage from '@pages/LoginPage';
 import SingleBlogPage from '@pages/SingleBlogPage';
+import BackofficeBlogsPage from '@pages/backoffice/BackofficeBlogsPage';
 import BackofficePage from '@pages/backoffice/BackofficePage';
 import MessagesPage from '@pages/backoffice/MessagesPage';
 
@@ -38,6 +40,10 @@ export const routes = [
                 element: <ContactPage />,
                 name: 'Kontakt',
             },
+            {
+                path: '/login',
+                element: <LoginPage />,
+            },
         ],
     },
 
@@ -50,11 +56,15 @@ export const routes = [
                 element: <BackofficePage />,
                 name: 'Backoffice',
             },
-
             {
                 path: 'messages',
                 element: <MessagesPage />,
                 name: 'Messages',
+            },
+            {
+                path: 'blogs',
+                element: <BackofficeBlogsPage />,
+                name: 'Blogs',
             },
         ],
     },
